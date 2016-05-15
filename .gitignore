@@ -1,0 +1,29 @@
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+atlassian-ide-plugin.xml
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
+
+*.jar
+!/gradle/wrapper/gradle-wrapper.jar
+
+
+
