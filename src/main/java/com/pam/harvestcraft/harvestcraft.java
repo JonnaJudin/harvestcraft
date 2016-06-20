@@ -65,7 +65,7 @@ public class harvestcraft {
         PamCropSeedDropRegistry.getSeedDrops();
         FishRegistry.registerItems();
         MarketItems.registerItems();
-        PacketHandler.init();
+//        PacketHandler.init();
         
         GameRegistry.registerTileEntity(TileEntityMarket.class, "PamMarket");
         if (ItemRegistry.squiddropCalamari)

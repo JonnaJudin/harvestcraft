@@ -55,7 +55,8 @@ public static void getRecipes()
 /*  73 */       CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(ItemRegistry.saltItem, new Object[] { "toolPot", "listAllwater" }));
      }
      
-/*  76 */     CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(ItemRegistry.freshwaterItem, new Object[] { "listAllwater" }));
+//below was messing with the configurable water recipe
+///*  76 */     CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(ItemRegistry.freshwaterItem, new Object[] { "listAllwater" }));
      
 /*  78 */     CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(Items.sugar, new Object[] { "toolPot", "foodHoneydrop" }));
 /*  79 */     CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(Items.sugar, new Object[] { "toolPot", "dropHoney" }));
