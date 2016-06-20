@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.network.NetHandlerPlayServer;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
@@ -52,13 +53,14 @@ public class MessageMarketBrowse implements IMessage, IMessageHandler<MessageMar
   {
 /* 51 */     EntityPlayerMP player = ctx.getServerHandler().playerEntity;
     
-/* 53 */     TileEntity tile_entity = player.worldObj.getTileEntity(message.x, message.y, message.z);
+             BlockPos position = new BlockPos(message.x, message.y, message.z);
+/* 53 */     TileEntity tile_entity = player.worldObj.getTileEntity(position);
 /* 54 */     if ((tile_entity instanceof TileEntityMarket))
     {
 /* 56 */       TileEntityMarket tileEntityMarket = (TileEntityMarket)tile_entity;
 /* 57 */       tileEntityMarket.setBrowsingInfo(message.itemNum);
     }
-/* 59 */     player.worldObj.markBlockForUpdate(message.x, message.y, message.z);
+/* 59 */     player.worldObj.markBlockForUpdate(position);
 /* 60 */     return null;
   }
 

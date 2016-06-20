@@ -8,6 +8,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.network.NetHandlerPlayServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import net.minecraft.util.BlockPos;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
@@ -47,8 +48,8 @@ public class MessageMarketClosed implements IMessage, IMessageHandler<MessageMar
   public IMessage onMessage(MessageMarketClosed message, MessageContext ctx)
   {
 /* 47 */     EntityPlayerMP player = ctx.getServerHandler().playerEntity;
-    
-/* 49 */     TileEntity tile_entity = player.worldObj.getTileEntity(message.x, message.y, message.z);
+             BlockPos position = new BlockPos(message.x, message.y, message.z);
+/* 49 */     TileEntity tile_entity = player.worldObj.getTileEntity(position);
 /* 50 */     if ((tile_entity instanceof TileEntityMarket))
     {
 /* 52 */       TileEntityMarket tileEntityMarket = (TileEntityMarket)tile_entity;
@@ -60,7 +61,7 @@ public class MessageMarketClosed implements IMessage, IMessageHandler<MessageMar
       }
 /* 59 */       tileEntityMarket.setTrading(false);
     }
-/* 61 */     player.worldObj.markBlockForUpdate(message.x, message.y, message.z);
+/* 61 */     player.worldObj.markBlockForUpdate(position);
 /* 62 */     return null;
   }
 }

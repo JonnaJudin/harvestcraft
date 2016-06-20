@@ -32,7 +32,7 @@ public class ClientProxy extends CommonProxy {
     
     public void registerRenderInformation(FMLPreInitializationEvent event)
     	{
-    	TileEntityHandler.registerTileEntityRenderers();
+//    	TileEntityHandler.registerTileEntityRenderers();
     	net.minecraftforge.common.MinecraftForge.EVENT_BUS.register(new EventHandler());
     	}
 	public World getClientWorld()

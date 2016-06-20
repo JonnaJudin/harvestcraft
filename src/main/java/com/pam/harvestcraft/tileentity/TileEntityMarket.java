@@ -6,12 +6,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.IChatComponent;
 
 public class TileEntityMarket extends TileEntity implements IInventory
 {
 	private ItemStack paySlot = null;
 
 	public int stockNum = 0;
+        public int xCoord, yCoord, zCoord;
 
 	private boolean isTrading = false;
 
@@ -54,7 +57,7 @@ public class TileEntityMarket extends TileEntity implements IInventory
 		return null;
 	}
 
-	@Override
+//	@Override
 	public ItemStack getStackInSlotOnClosing(int par1)
 	{
 		if (this.paySlot != null)
@@ -135,6 +138,7 @@ public class TileEntityMarket extends TileEntity implements IInventory
 		return isTrading;
 	}
 
+        @Override
 	public int getInventoryStackLimit()
 	{
 		return 64;
@@ -143,7 +147,7 @@ public class TileEntityMarket extends TileEntity implements IInventory
 	@Override
 	public boolean isUseableByPlayer(EntityPlayer par1EntityPlayer)
 	{
-		return this.worldObj.getTileEntity(this.xCoord, this.yCoord, this.zCoord) != this ? false : par1EntityPlayer.getDistanceSq(this.xCoord + 0.5D, this.yCoord + 0.5D, this.zCoord + 0.5D) <= 64.0D;
+		return this.worldObj.getTileEntity(new BlockPos(xCoord, yCoord, zCoord)) != this ? false : par1EntityPlayer.getDistanceSq(this.xCoord + 0.5D, this.yCoord + 0.5D, this.zCoord + 0.5D) <= 64.0D;
 	}
 
 	@Override
@@ -152,16 +156,16 @@ public class TileEntityMarket extends TileEntity implements IInventory
 		super.updateContainingBlockInfo();
 	}
 
-	@Override
+//	@Override
 	public void updateEntity()
 	{
-		super.updateEntity();
+//		super.updateEntity();
 	}
 
-	@Override
+//	@Override
 	public void openInventory(){}
 
-	@Override
+//	@Override
 	public void closeInventory()
 	{
 		setTrading(false);
@@ -180,15 +184,65 @@ public class TileEntityMarket extends TileEntity implements IInventory
 		return false;
 	}
 
-	@Override
+//	@Override
 	public String getInventoryName()
 	{
 		return "Market";
 	}
 
-	@Override
+//	@Override
 	public boolean hasCustomInventoryName()
 	{
 		return false;
 	}
+
+    @Override
+    public ItemStack removeStackFromSlot(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void openInventory(EntityPlayer ep) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void closeInventory(EntityPlayer ep) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int getField(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setField(int i, int i1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int getFieldCount() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void clear() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean hasCustomName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public IChatComponent getDisplayName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

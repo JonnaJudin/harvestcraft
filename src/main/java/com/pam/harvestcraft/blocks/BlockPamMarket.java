@@ -9,6 +9,7 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 
 public class BlockPamMarket extends BlockContainer
@@ -31,7 +32,7 @@ public class BlockPamMarket extends BlockContainer
 
   public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float xCoord, float yCoord, float zCoord)
   {
-	  TileEntity tile = world.getTileEntity(x, y, z);
+	  TileEntity tile = world.getTileEntity(new BlockPos(x, y, z));
 	  if ((tile == null) || (player.isSneaking()))
     {
 		  return false;
@@ -41,6 +42,7 @@ public class BlockPamMarket extends BlockContainer
 	  return true;
   }
 
+  @Override
   public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_)
   {
 	return new TileEntityMarket();

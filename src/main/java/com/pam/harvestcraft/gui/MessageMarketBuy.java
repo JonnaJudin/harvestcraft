@@ -6,6 +6,7 @@ import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
@@ -55,7 +56,8 @@ public class MessageMarketBuy implements IMessage, IMessageHandler<MessageMarket
   {
 /* 53 */     EntityPlayerMP player = ctx.getServerHandler().playerEntity;
     
-/* 55 */     net.minecraft.tileentity.TileEntity tile_entity = player.worldObj.getTileEntity(message.x, message.y, message.z);
+             BlockPos position = new BlockPos(message.x, message.y, message.z);
+/* 55 */     net.minecraft.tileentity.TileEntity tile_entity = player.worldObj.getTileEntity(position);
 /* 56 */     if ((tile_entity instanceof TileEntityMarket))
     {
 /* 58 */       TileEntityMarket tileEntityMarket = (TileEntityMarket)tile_entity;

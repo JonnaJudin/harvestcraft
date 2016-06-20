@@ -118,6 +118,7 @@ public class GuiMarket extends GuiContainer
                 super.onGuiClosed();
         }
  
+        @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2)
         {
                 this.fontRendererObj.drawString("Inventory", 8, (ySize - 96) + 13, 4210752);
@@ -134,11 +135,13 @@ public class GuiMarket extends GuiContainer
                
                 ItemStack item = data.getItem();
                 itemRender.renderItemAndEffectIntoGUI(item, 73, 16);
-                itemRender.renderItemOverlayIntoGUI(this.fontRendererObj, this.mc.getTextureManager(), item, 73, 16);
+                itemRender.renderItemOverlayIntoGUI(this.fontRendererObj, item, 73, 16, item.getDisplayName());
+//                itemRender.renderItemOverlayIntoGUI(this.fontRendererObj, this.mc.getTextureManager(), item, 73, 16);
  
                 ItemStack currency = data.getCurrency();
                 itemRender.renderItemAndEffectIntoGUI(currency, 100, 16);
-                itemRender.renderItemOverlayIntoGUI(this.fontRendererObj, this.mc.getTextureManager(), currency, 100, 16);
+                itemRender.renderItemOverlayIntoGUI(this.fontRendererObj, currency, 100, 16, currency.getDisplayName());
+//                itemRender.renderItemOverlayIntoGUI(this.fontRendererObj, this.mc.getTextureManager(), currency, 100, 16);
                 itemRender.zLevel = 0.0F;
                 GL11.glDisable(GL11.GL_LIGHTING);
  
@@ -151,16 +154,18 @@ public class GuiMarket extends GuiContainer
                 RenderHelper.enableStandardItemLighting();
         }
  
+        @Override
         public void drawScreen(int par1, int par2, float par3)
         {
                 super.drawScreen(par1, par2, par3);
                 ItemStack item = MarketItems.getData(itemNum).getItem();
-                if (this.func_146978_c(73, 16, 16, 16, par1, par2))
-                {
-                        this.renderToolTip(item, par1, par2);
-                }
+//                if (this.func_146978_c(73, 16, 16, 16, par1, par2))
+//                {
+//                        this.renderToolTip(item, par1, par2);
+//                }
         }
  
+        @Override
         protected void drawGuiContainerBackgroundLayer(float f, int i, int j)
         {
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
