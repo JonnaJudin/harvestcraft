@@ -426,10 +426,12 @@ public class BlockPamCrop extends Block  implements IGrowable, net.minecraftforg
             } else
             if(currentBlock == BlockRegistry.pamwaterchestnutCrop){
                 savedStack = new ItemStack(ItemRegistry.waterchestnutItem);
+            } else
+            if(currentBlock == BlockRegistry.pamwhitemushroomCrop){
+                savedStack = new ItemStack(ItemRegistry.whitemushroomItem);
             }
             else
                 savedStack = new ItemStack(Items.wheat);
- 
             
             worldIn.setBlockState(pos, state.withProperty(AGE, 0), 3);
             EntityItem entityItem = new EntityItem(worldIn, playerIn.posX, playerIn.posY - 1D, playerIn.posZ, savedStack);

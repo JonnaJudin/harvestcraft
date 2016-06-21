@@ -73,7 +73,7 @@ public class Config
 						"harvestcraft:onionItem", "harvestcraft:parsnipItem", "harvestcraft:peanutItem",
 						"minecraft:potato", "minecraft:carrot", "harvestcraft:lettuceItem",
 						"harvestcraft:artichokeItem", "harvestcraft:bellpepperItem", "harvestcraft:chilipepperItem",
-						"minecraft:wheat",},
+						"minecraft:wheat","harvestcraft:cottonItem"},
 				"comment"));
 
 		if (config.hasChanged())

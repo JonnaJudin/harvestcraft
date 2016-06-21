@@ -66,6 +66,7 @@ public static void getRecipes()
  
 /*  84 */     CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack(ItemRegistry.freshwaterItem, ItemRegistry.freshwaterfrombucket), new Object[] { Items.water_bucket }));
 /*  85 */     CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack(ItemRegistry.freshmilkItem, ItemRegistry.freshmilkfrombucket), new Object[] { Items.milk_bucket }));
+              GameRegistry.addSmelting(ItemRegistry.freshwaterItem, new ItemStack(ItemRegistry.bubblywaterItem, 1, 0), 0.1F);
      
 /*  87 */     CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(Items.cake, 1), new Object[] { "AAA", "BEB", "CCC", Character.valueOf('A'), "listAllmilk", Character.valueOf('B'), "honeyEqualssugar", Character.valueOf('C'), "flourEqualswheat", Character.valueOf('E'), "listAllegg" }));
      
@@ -126,7 +127,7 @@ public static void getRecipes()
  
 /* 144 */     CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(ItemRegistry.silkentofuItem, new Object[] { "toolSaucepan", "cropSoybean" }));
 CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(ItemRegistry.firmtofuItem, new Object[] { "toolSkillet", "foodSilkentofu" }));
-CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(ItemRegistry.soymilkItem, new Object[] { "toolPot", "cropSoybean" }));
+CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(ItemRegistry.soymilkItem, new Object[] { "toolPot", "foodSilkentofu" }));
 
 /* 144 */     CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(ItemRegistry.flourItem, new Object[] { "toolMortarandpestle", Items.wheat }));
 /* 145 */     CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(ItemRegistry.flourItem, new Object[] { "toolMortarandpestle", "cropRice" }));
