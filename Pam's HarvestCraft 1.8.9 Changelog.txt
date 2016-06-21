@@ -7,6 +7,7 @@
 - Fixed: Soymilk is made with pot and silken tofu
 - Fixed: Soybean plus pot now makes stock
 - Fixed: Water bucket to fresh water recipe now listens to the config
+- Fixed: Cinnamon and Maple now drop the appropriate items
 
 1.8.9d
 - Fixed: Gardens not dropping things

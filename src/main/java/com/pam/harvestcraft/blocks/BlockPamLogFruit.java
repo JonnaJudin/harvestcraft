@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import com.pam.harvestcraft.harvestcraft;
+import com.pam.harvestcraft.item.ItemRegistry;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
@@ -138,10 +139,10 @@ public class BlockPamLogFruit extends Block  implements IGrowable
 			Block currentBlock = worldIn.getBlockState(pos).getBlock();
 			 
             if(currentBlock == BlockRegistry.pamCinnamon){
-                savedStack = new ItemStack(Items.apple);
+                savedStack = new ItemStack(ItemRegistry.cinnamonItem);
             }
             if(currentBlock == BlockRegistry.pamMaple){
-                savedStack = new ItemStack(Items.apple);
+                savedStack = new ItemStack(ItemRegistry.maplesyrupItem);
             }
             if(currentBlock == BlockRegistry.pamPaperbark){
                 savedStack = new ItemStack(Items.paper);
